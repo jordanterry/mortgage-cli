@@ -1,15 +1,19 @@
 """Output formatting for mortgage-cli."""
 
-from typing import Literal
+from typing import Literal, Union
 
 from mortgage_cli.output.colors import verdict_to_color, verdict_to_style
+from mortgage_cli.output.csv_fmt import CsvFormatter
 from mortgage_cli.output.json_fmt import JsonFormatter
+from mortgage_cli.output.summary import SummaryFormatter
 from mortgage_cli.output.table import TableFormatter
 
 OutputFormat = Literal["table", "json", "csv", "summary"]
 
+Formatter = Union[TableFormatter, JsonFormatter, CsvFormatter, SummaryFormatter]
 
-def get_formatter(format_name: str) -> TableFormatter | JsonFormatter:
+
+def get_formatter(format_name: str) -> Formatter:
     """Get the appropriate formatter for the specified format.
 
     Args:
@@ -24,6 +28,8 @@ def get_formatter(format_name: str) -> TableFormatter | JsonFormatter:
     formatters = {
         "table": TableFormatter,
         "json": JsonFormatter,
+        "csv": CsvFormatter,
+        "summary": SummaryFormatter,
     }
 
     if format_name not in formatters:

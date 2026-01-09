@@ -31,10 +31,11 @@ def list_profiles(
 
     formatter = get_formatter(output)
 
-    if output == "json":
-        console.print(formatter.format_profile_list(profiles))
-    else:
+    if output == "table":
         formatter.format_profile_list(profiles)
+    else:
+        # JSON and CSV formatters return strings
+        console.print(formatter.format_profile_list(profiles))
 
 
 @app.command("show")
@@ -196,7 +197,8 @@ def compare_profiles(
 
     # Output
     formatter = get_formatter(output)
-    if output == "json":
-        console.print(formatter.format_profile_comparison(comparisons, price, rent))
-    else:
+    if output == "table":
         formatter.format_profile_comparison(comparisons, price, rent)
+    else:
+        # JSON and CSV formatters return strings
+        console.print(formatter.format_profile_comparison(comparisons, price, rent))

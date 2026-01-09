@@ -118,15 +118,16 @@ def matrix(
         console.print(f"[red]Error: {e}[/red]")
         raise typer.Exit(1)
 
-    if output == "json":
+    if output == "table":
+        formatter.format_matrix(
+            matrix_data, prices, down_payments, target_rent, profile_data
+        )
+    else:
+        # JSON and CSV formatters return strings
         console.print(
             formatter.format_matrix(
                 matrix_data, prices, down_payments, target_rent, profile_data
             )
-        )
-    else:
-        formatter.format_matrix(
-            matrix_data, prices, down_payments, target_rent, profile_data
         )
 
 

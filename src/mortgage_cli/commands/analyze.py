@@ -85,7 +85,8 @@ def analyze(
         console.print(f"[red]Error: {e}[/red]")
         raise typer.Exit(1)
 
-    if output == "json":
-        console.print(formatter.format_analysis(result, profile_data))
-    else:
+    if output == "table":
         formatter.format_analysis(result, profile_data)
+    else:
+        # JSON and CSV formatters return strings
+        console.print(formatter.format_analysis(result, profile_data))
