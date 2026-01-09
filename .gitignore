@@ -48,3 +48,8 @@ Thumbs.db
 
 # Project specific
 *.xlsx
+
+# Docusaurus
+docs/node_modules/
+docs/build/
+docs/.docusaurus/
