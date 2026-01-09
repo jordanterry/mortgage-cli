@@ -90,6 +90,17 @@ Profiles store your investment parameters (interest rates, costs, thresholds). T
 
 ## Next Steps
 
+### Tutorials
+
+New to mortgage-cli? Start with these step-by-step tutorials:
+
+1. [Evaluating Your First Property](/tutorials/first-property) - Learn the basics with a real scenario
+2. [Finding Your Price Range](/tutorials/finding-price-range) - Use the sensitivity matrix to explore options
+3. [Stress Testing Your Investment](/tutorials/stress-testing) - Create profiles to evaluate risk
+4. [Understanding Amortization](/tutorials/understanding-amortization) - See how your mortgage works over time
+
+### Reference
+
 - [CLI Reference](/cli-reference/analyze) - Detailed command documentation
 - [Configuration](/configuration/profiles) - Customize profiles for your needs
-- [Examples](/examples/basic-analysis) - Real-world usage examples
+- [Examples](/examples/basic-analysis) - Quick examples and recipes
